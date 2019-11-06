@@ -8,15 +8,15 @@
 $nama = $_POST["nama"];
 $email = $_POST["email"];
 $komentar = $_POST["komentar"];
-$conn=mysqli_connect ("localhost:3307","root","","universitas")
+$conn=mysql_connect ("localhost:3307","root","")
 or die ("koneksi gagal");
-mysqli_select_db($conn,"universitas");
+mysql_select_db($conn,"universitas");
 echo "Nama : $nama <br>";
 echo "Email : $email <br>";
 echo "Komentar : $komentar <br>";
 $sqlstr="insert into bukutamu (nama,email,komentar)
 values ('$nama','$email','$komentar')";
-$hasil = mysqli_query($conn,$sqlstr);
+$hasil = mysql_query($conn,$sqlstr);
 echo "Simpan bukutamu berhasil dilakukan";
 ?>
 </BODY>
